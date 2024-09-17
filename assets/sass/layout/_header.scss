@@ -1,0 +1,151 @@
+@use "../utils" as u;
+
+header {
+  background-color: #f5f7fa;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: clamp(3.75rem, 2.4202rem + 4.2553vw, 6.25rem);
+
+    a {
+      text-decoration: none;
+      color: #18191f;
+      cursor: pointer;
+      font-family: "TwkLausanne-300";
+    }
+
+    .logo-wrapper {
+      width: 250px;
+
+      img {
+        max-width: 156px;
+        width: 100%;
+      }
+      @media (max-width: 1000px) {
+        flex: 1;
+        order: 2;
+        text-align: center;
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .menu-mobile-wrapper {
+      display: none;
+      @media (max-width: 1000px) {
+        display: block;
+        flex: 1;
+        order: 1;
+
+        button {
+          width: 40px;
+          height: 40px;
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+
+    ul.menu {
+      li {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &.active {
+          a {
+            font-family: "TwkLausanne-400";
+          }
+        }
+
+        &:last-child {
+          display: none;
+
+          @media (max-width: 1000px) {
+            display: block;
+          }
+        }
+      }
+      .overlay-close {
+        display: none;
+      }
+
+      @media (max-width: 1000px) {
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: hsla(0, 76%, 52%, 0.9);
+
+        flex-direction: column;
+        gap: 50px;
+
+        li {
+          a {
+            color: white;
+            font-size: 36px;
+          }
+        }
+
+        &.open {
+          visibility: visible;
+          -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+          transition: transform 0.4s ease-in-out;
+
+          .overlay-close {
+            display: block;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            overflow: hidden;
+            border: none;
+            background: url(../images/close.svg) no-repeat center center;
+            text-indent: 200%;
+            color: transparent;
+            outline: none;
+            z-index: 100;
+          }
+        }
+      }
+    }
+    ul.contact {
+      width: 250px;
+
+      .cta-button {
+        padding: 10px 20px;
+        @media (max-width: 450px) {
+          font-size: 12px;
+          padding: 10px 10px;
+        }
+      }
+
+      @media (max-width: 1000px) {
+        flex: 1;
+        order: 3;
+        justify-content: flex-end;
+        li:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

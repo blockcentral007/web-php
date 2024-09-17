@@ -1,0 +1,69 @@
+.swiper-wrapper {
+  align-items: center;
+}
+.swiper-container {
+  position: relative;
+  width: 100%;
+  margin-top: clamp(0rem, -3.8457rem + 14.3098vw, 5.3125rem);
+  padding-top: 30px;
+  min-height: calc(
+    clamp(15.625rem, 2.2327rem + 49.8316vw, 34.125rem) +
+      clamp(1.875rem, -0.6134rem + 9.2593vw, 5.3125rem) + 30px
+  );
+  @media (max-width: 749px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.swiper-container > .swiper-slide__content {
+  position: absolute;
+  top: 0;
+}
+
+.swiper-slide {
+  border-radius: clamp(0.375rem, -1.6157rem + 7.4074vw, 3.125rem);
+  overflow: hidden;
+  height: clamp(15.625rem, 6.5762rem + 33.67vw, 28.125rem);
+  display: flex;
+  background: #eee;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms linear;
+
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .cont-item {
+    width: 100%;
+    background: rgba(30, 35, 41, 0.6);
+    padding: clamp(1.25rem, 0.1189rem + 4.2088vw, 2.8125rem)
+      clamp(0.9375rem, -0.1936rem + 4.2088vw, 2.5rem);
+    backdrop-filter: blur(5px);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      padding: 15px;
+      color: #fff;
+      font-family: "TwkLausanne-500";
+      font-size: clamp(1rem, 0.638rem + 1.3468vw, 1.5rem);
+      border-radius: 16px;
+      border: 1px solid #c1c1c1;
+    }
+  }
+
+  &.swiper-slide-active {
+    height: clamp(15.625rem, 2.2327rem + 49.8316vw, 34.125rem);
+    background: #fc0;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 5px 25px 5px rgba(0, 0, 0, 0.34);
+  }
+}
+.swiper-slide__content {
+  height: 300px;
+}

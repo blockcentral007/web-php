@@ -1,0 +1,88 @@
+@use "../utils" as u;
+
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.padding-section {
+  padding-top: clamp(2.1875rem, 0.8577rem + 4.2553vw, 4.6875rem);
+  padding-bottom: clamp(2.1875rem, 0.8577rem + 4.2553vw, 4.6875rem);
+}
+.padding-top-section {
+  padding-top: clamp(3.125rem, 0.266rem + 10.6383vw, 6.25rem);
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: all 0.4s;
+  font-family: "TwkLausanne-600";
+  font-size: 14px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    margin-left: 10px;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.abs {
+  position: absolute;
+}
+
+@keyframes mymove {
+  50% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+// @keyframes mymove2 {
+//   50% {
+//     transform: scale(1.5);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: scale(2);
+//     opacity: 0;
+//   }
+// }
+
+@keyframes rotating-right {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}

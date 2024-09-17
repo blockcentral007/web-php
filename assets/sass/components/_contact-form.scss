@@ -1,0 +1,164 @@
+@use "../utils" as u;
+
+.contact-form {
+  display: none;
+}
+.contact-form.active {
+  padding: 10px;
+  position: fixed !important;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  z-index: 100;
+  .outer-cont {
+    background-color: white;
+    max-width: 684px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    padding: clamp(1.25rem, 0.0676rem + 2.7027vw, 2.5rem);
+    border-radius: 20px;
+    border: 1px solid #ddd;
+
+    position: relative;
+
+    @media (max-width: 500px) {
+      overflow: scroll;
+      height: 100%;
+      align-items: flex-start;
+    }
+
+    .inner-cont {
+      width: 100%;
+      h3 {
+        color: #414042;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 12px;
+      }
+      p {
+        color: #606060;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 157.143% */
+        max-width: 435px;
+        width: 100%;
+        margin-bottom: 39px;
+      }
+
+      form#contactForm {
+        label,
+        input,
+        textarea,
+        button,
+        select {
+          width: 100%;
+          outline: none;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .sec {
+          width: 100%;
+
+          label {
+            margin-bottom: 10px;
+            display: block;
+
+            color: #1d263a;
+            font-family: Inter;
+            font-size: 17px;
+            font-weight: 600;
+          }
+
+          input,
+          textarea,
+          select {
+            border-radius: 10px;
+            background-color: hsla(196, 33%, 91%, 0.5);
+            border: none;
+            padding: 16px;
+
+            color: hsla(221, 34%, 17%, 1);
+
+            &::placeholder {
+              color: hsla(221, 34%, 17%, 0.5);
+              font-family: Inter;
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+
+          select {
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            -moz-appearance: none;
+            background-image: url("https://www.svgrepo.com/show/80156/down-arrow.svg");
+            background-repeat: no-repeat;
+            background-size: 14px 14px;
+            background-position: calc(100% - 16px);
+          }
+        }
+
+        button {
+          color: #fff;
+          text-align: center;
+          font-family: Inter;
+          font-size: 17px;
+          font-weight: 500;
+          padding: 14px;
+          background-color: u.$primary-color;
+          outline: none;
+          border-radius: 12px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .group-cont {
+          display: flex;
+          gap: 24px;
+
+          flex-direction: row;
+
+          @include u.breakpoint-max(medium) {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    #messageArea {
+      margin-top: 10px;
+    }
+  }
+}
